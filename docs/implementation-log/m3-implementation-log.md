@@ -31,7 +31,7 @@ Experiment 3 is in progress. Experiment 1 received an Ads Manager orientation an
 
 ## Repository state
 
-The local `meta-camp` repository is on `main` at commit `aefb4ec` and tracks `origin/main`. Its `origin` remote is the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`. The agent has not independently fetched live remote contents. Never stage `.env`.
+The local `meta-camp` repository is on `main` at commit `8e1f081` and tracks `origin/main`. Its `origin` remote is the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`. The agent has not independently fetched live remote contents. Never stage `.env`.
 
 ### m3.f4.list_campaigns
 
@@ -72,10 +72,20 @@ The local `meta-camp` repository is on `main` at commit `aefb4ec` and tracks `or
 
 ### m3.f8.synthetic_response_fixtures
 
-- **Status:** Fixture files created and locally validated; parsing with application code remains a later task; **Commit:** Pending.
+- **Status:** Fixture files created and locally validated; **Commit:** `8e1f081` (recorded with the next feature, per the agreed log convention).
 - **Files:** `tests/fixtures/README.md` and 16 JSON fixtures covering an account, two campaign pages, ad sets, ads, aggregate account/campaign/ad-set/ad Insights, seven daily account rows, 21 daily campaign rows, explicit-zero and empty cases, and illustrative expired-token, permission, and rate-limit error bodies.
 - **What and why:** The live account returned no campaign, ad-set, ad, or Insights rows. These deliberately invented responses provide nonempty hierarchy and metrics for offline parser, pagination, and error-handling exercises without implying live ad delivery or spend.
 - **Data meaning:** Four synthetic campaigns, five ad sets, and five ads support traffic-campaign comparison, a different awareness objective, and a no-delivery hierarchy. Three campaigns have invented delivery between September 20-26, 2026 within the September 1-26 aggregate window. Account, campaign, ad-set, ad, and daily spend, impressions, and clicks reconcile to 100.00, 14000, and 400. Reach is deliberately non-additive; one campaign/day row omits reach to distinguish missing from zero. The top-level `_fixture` marker is local metadata, not a Meta API field. Paging URLs and error details are illustrative and contain no token.
 - **Verification:** All 16 JSON files parsed with PowerShell `ConvertFrom-Json` and contained `_fixture.synthetic = true`. Local checks confirmed hierarchy parent links, row counts, aggregate and per-day additive totals, the missing-reach case, and the preserved empty fixture. The agent did not run the Python client against these files or make a live API request.
 - **Limitations:** Synthetic error codes and HTTP status metadata are test inputs, not a guarantee of Meta's exact responses. A network failure has no JSON body and will need a simulated transport exception. Fixtures alone do not verify pagination or normalization code.
 - **Recheck:** Inspect `tests/fixtures/README.md`, parse each JSON file locally, and verify IDs and metric totals before using the samples in parser tests. Never send fixture URLs to Meta.
+
+### m3.f9.insights_source_and_parser
+
+- **Status:** Locally verified with fixtures and a mocked live request; student reports the PyCharm fixture run worked; **Commit:** Pending.
+- **Files:** `src/inspect_insights.py`, `tests/test_insights_parsing.py`.
+- **What and why:** The Insights script now defaults to an offline synthetic fixture and uses `--source live` for an explicit Meta GET. `--level account|campaign|adset|ad` selects the reporting level and matching aggregate fixture. Both sources feed the same normalization path.
+- **Code meaning:** Normalization keeps the report level, date range, and parent IDs; parses spend with `Decimal` and count metrics as integers; and leaves omitted metrics as `None`. It rejects malformed dates, IDs, and metric values. Fixture mode checks the synthetic marker before use and needs no token or network. Output names its source so sample values cannot be mistaken for live performance.
+- **Verification:** Six standard-library unit tests passed using PyCharm's configured Python 3.13.7 environment. They covered account and hierarchy levels, empty versus explicit zero and missing reach, malformed input, fixture mode without credentials/network, and a mocked live request with the same account-level query and timeout. A direct offline script run from `src/` printed one synthetic account row with spend `100.00`, impressions `14000`, clicks `400`, reach `9000`, and no next page. The student reports the PyCharm fixture run worked. A later HTTP 401 from `inspect_accounts.py` was resolved after the student regenerated the token; that recovery does not verify the new live Insights path. No live Meta request was made by the agent for this change; `.env` was not inspected.
+- **Limitations:** Only the first page is processed. Daily fixture selection, KPI calculations, API error classification, and real live response validation after this change remain for later tasks.
+- **Recheck:** Run `src/inspect_insights.py` in PyCharm with no script parameters and confirm `Source: SYNTHETIC fixture` and one account row. Optionally use `--level ad` for four synthetic ad rows. Use `--source live` only when intentionally checking the authorized Meta account.
