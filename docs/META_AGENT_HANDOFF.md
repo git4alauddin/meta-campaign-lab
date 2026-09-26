@@ -18,9 +18,9 @@ The workflow governs **how** to work; the active planner governs **what** to bui
 
 **Active work:** Experiment 3, Marketing API Fundamentals. The student chose to move from Ads Manager orientation to application/API work. Experiment 1's final draft and no-spend verification remain open; Experiment 2 was deferred, not completed. Read `docs/implementation-log/m3-implementation-log.md` for task evidence and limitations.
 
-The student reports that a Meta developer app and Graph API Explorer are available at `v26.0`, and that `ads_read` allowed an account-list request. The first Python script, `src/inspect_accounts.py`, returned one account on its first page with no further page, according to the student's run output. No token or raw account response was shared.
+The student reports that a Meta developer app and Graph API Explorer are available at `v26.0`, and that `ads_read` allowed an account-list request. `src/inspect_accounts.py` returned one account on its first page with no further page. The campaign-list request returned an empty `data` list in Explorer, and `src/inspect_campaign.py` returned zero campaigns with no next page. These are student-reported runs; the agent did not run live requests. No token or raw account response was shared.
 
-**Repository:** `C:\Users\alaud\OneDrive\Desktop\meta-camp` has an initialized Git repository on `main`. `origin` is configured as the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`; remote contents have not been verified from the agent environment. No local commit existed at this checkpoint. `.env` is ignored and must never be inspected or staged.
+**Repository:** `C:\Users\alaud\OneDrive\Desktop\meta-camp` is on `main` at commit `d4c5adc` and tracks `origin/main`. `origin` is configured as the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`; live remote contents have not been fetched by the agent. `.env` is ignored and must never be inspected or staged. By agreement, a commit's hash is recorded in the implementation log with the next feature commit; no hash-only commit is made.
 
 ## Planned experiment sequence
 
@@ -63,4 +63,4 @@ The student reports that a Meta developer app and Graph API Explorer are availab
 
 Change only durable resume information: current experiment checkpoint, verified project/repo paths, major source-of-truth changes and stable collaboration rules. Never guess a local project path or copy the Telegram project's local path/GitHub remote into this new Meta project without confirmation.
 
-**Next agent action:** Review the Experiment 3 log and first commit paths, then continue with the first unfinished read-only Marketing API task. Do not create or publish an ad or initiate spending.
+**Next agent action:** Review and commit the verified campaign-list feature with explicit paths, then continue to the next read-only hierarchy task. Do not create or publish an ad or initiate spending.
