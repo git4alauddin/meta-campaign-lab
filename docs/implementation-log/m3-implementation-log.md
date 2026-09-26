@@ -31,7 +31,7 @@ Experiment 3 is in progress. Experiment 1 received an Ads Manager orientation an
 
 ## Repository state
 
-The local `meta-camp` repository is on `main` at commit `487a462` and tracks `origin/main`. Its `origin` remote is the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`. The agent has not independently fetched live remote contents. Never stage `.env`.
+The local `meta-camp` repository is on `main` at commit `64f8c0b` and tracks `origin/main`. Its `origin` remote is the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`. The agent has not independently fetched live remote contents. Never stage `.env`.
 
 ### m3.f4.list_campaigns
 
@@ -53,9 +53,19 @@ The local `meta-camp` repository is on `main` at commit `487a462` and tracks `or
 
 ### m3.f6.list_ads
 
-- **Status:** Verified by code review and student-reported Python output; **Commit:** Pending.
+- **Status:** Verified by code review and student-reported Python output; **Commit:** `64f8c0b` (recorded with the next feature, per the agreed log convention).
 - **File:** `src/inspect_ads.py`.
 - **What and why:** Added a read-only account-level ad request to inspect ads and their parent `adset_id` and `campaign_id` when data exists.
 - **Code meaning:** The script reads the token and account ID from the local environment, requests `id,name,adset_id,campaign_id,status,effective_status` from `/ads` with a limit of 25, and prints the first-page count, paging indicator, and returned list. It does not write ad objects or follow additional pages.
 - **Verification:** The student ran it in PyCharm and reported `Ads on first page: 0`, `More pages: no`, and `[]`. The agent reviewed the code and its diff against `src/inspect_adsets.py` but did not run a live API request or inspect `.env`. There are no returned parent-child IDs to compare.
 - **Recheck:** Run `src/inspect_ads.py` with the local `.env` loaded in PyCharm. If ads later exist, compare their `adset_id` and `campaign_id` values locally to the corresponding lists without sharing account details or tokens.
+
+### m3.f7.read_account_insights
+
+- **Status:** Verified by code review and student-reported Explorer and Python output; **Commit:** Pending.
+- **File:** `src/inspect_insights.py`.
+- **What and why:** Added a read-only account-level Insights request for September 1-26, 2026 to establish a fixed reporting window for later analytics work.
+- **Code meaning:** The script reads the token and account ID from the local environment, requests `date_start,date_stop,spend,impressions,clicks,reach` with `level=account`, the fixed `time_range`, and a limit of 25. It prints the selected range, first-page row count, paging indicator, and returned rows. It does not write ad objects or follow additional pages.
+- **Verification:** The student reported `{"data": []}` for the same request in Graph API Explorer, then ran the Python script and reported `Insights range: 2026-09-01 to 2026-09-26`, `Insights rows on first page: 0`, `More pages: no`, and `[]`. The agent reviewed the code but did not run a live API request or inspect `.env`.
+- **Limitations:** The empty response contains no metric values; it must not be interpreted as a row of zero-valued metrics. Normalization of nonempty results and comparison across reporting levels remain unverified.
+- **Recheck:** Run `src/inspect_insights.py` with the local `.env` loaded in PyCharm, and compare the date range and row count with the same Explorer GET. Do not share tokens or account details.
