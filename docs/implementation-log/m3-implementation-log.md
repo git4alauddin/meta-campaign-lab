@@ -31,13 +31,22 @@ Experiment 3 is in progress. Experiment 1 received an Ads Manager orientation an
 
 ## Repository state
 
-The local `meta-camp` repository is on `main` at initial commit `d4c5adc` and tracks `origin/main`. Its `origin` remote is the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`. The agent has not independently fetched live remote contents. Never stage `.env`.
+The local `meta-camp` repository is on `main` at commit `09fdf54` and tracks `origin/main`. Its `origin` remote is the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`. The agent has not independently fetched live remote contents. Never stage `.env`.
 
 ### m3.f4.list_campaigns
 
-- **Status:** Verified by code review and student-reported Explorer and Python output; **Commit:** Pending.
+- **Status:** Verified by code review and student-reported Explorer and Python output; **Commit:** `09fdf54` (recorded with the next feature, per the agreed log convention).
 - **What and why:** The student sent a read-only campaign-list request for the authorized ad account to discover the response shape before coding it.
 - **Evidence:** The student shared a sanitized response of `{"data": []}`. This confirms an empty campaign list for that request. It does not establish why no campaigns were returned or whether an unpublished Ads Manager draft exists.
 - **Python implementation:** The student added `src/inspect_campaign.py`, using `META_ACCESS_TOKEN` and `META_AD_ACCOUNT_ID` from local configuration. An initial run stopped at local account-ID validation; the student corrected the value. The agent reviewed the read-only code but did not run the live request or inspect `.env`.
 - **Verification:** The student reported `Campaigns on first page: 0`, `More pages: no`, and `[]`, matching the earlier Explorer response. An empty list is handled as a successful result. The code requests only one page and makes no write request.
 - **Recheck:** Run `src/inspect_campaign.py` with the local `.env` loaded in PyCharm and compare the count and paging indicator with the same account-level Explorer GET. If campaigns later exist, inspect returned fields locally without sharing IDs or names.
+
+### m3.f5.list_ad_sets
+
+- **Status:** Verified by code review and student-reported Python output; **Commit:** Pending.
+- **File:** `src/inspect_adsets.py`.
+- **What and why:** Added a read-only account-level ad-set request to extend the advertising hierarchy and expose each ad set's parent `campaign_id` when data exists.
+- **Code meaning:** The script reads `META_ACCESS_TOKEN` and `META_AD_ACCOUNT_ID` from the local environment, requests `id,name,campaign_id,status,effective_status` from `/adsets` with a limit of 25, and prints the first-page count, whether another page exists, and the returned list. It does not modify ads or retrieve additional pages.
+- **Verification:** The student ran it in PyCharm and reported `Ad sets on first page: 0`, `More pages: no`, and `[]`. The agent reviewed the file and its diff against `src/inspect_campaign.py` but did not run a live API request or inspect `.env`. This is a valid empty result for that request; no parent-child IDs could be compared yet.
+- **Recheck:** Run `src/inspect_adsets.py` with the local `.env` loaded in PyCharm. If ad sets later exist, compare their `campaign_id` values to the campaign list locally without sharing account details or tokens.
