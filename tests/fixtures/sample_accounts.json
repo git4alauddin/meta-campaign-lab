@@ -1,0 +1,20 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "one accessible ad account"
+  },
+  "data": [
+    {
+      "id": "act_000000000000001",
+      "name": "SYNTHETIC Demo Account",
+      "currency": "USD",
+      "timezone_name": "America/New_York"
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "before": "synthetic_accounts_cursor",
+      "after": "synthetic_accounts_cursor"
+    }
+  }
+}

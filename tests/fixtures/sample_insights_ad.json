@@ -1,0 +1,57 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "ad-level Insights for 2026-09-01 through 2026-09-26",
+    "level": "ad"
+  },
+  "data": [
+    {
+      "ad_id": "400000000000001",
+      "ad_name": "SYNTHETIC Healthy - Broad Ad",
+      "adset_id": "300000000000001",
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "18.00",
+      "impressions": "3600",
+      "clicks": "180",
+      "reach": "2450"
+    },
+    {
+      "ad_id": "400000000000002",
+      "ad_name": "SYNTHETIC Healthy - Interest Ad",
+      "adset_id": "300000000000002",
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "7.00",
+      "impressions": "1400",
+      "clicks": "70",
+      "reach": "1100"
+    },
+    {
+      "ad_id": "400000000000003",
+      "ad_name": "SYNTHETIC High Cost Ad",
+      "adset_id": "300000000000003",
+      "campaign_id": "200000000000002",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "60.00",
+      "impressions": "3000",
+      "clicks": "60",
+      "reach": "2300"
+    },
+    {
+      "ad_id": "400000000000004",
+      "ad_name": "SYNTHETIC Awareness Ad",
+      "adset_id": "300000000000004",
+      "campaign_id": "200000000000003",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "15.00",
+      "impressions": "6000",
+      "clicks": "90",
+      "reach": "4300"
+    }
+  ]
+}

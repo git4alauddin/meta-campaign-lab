@@ -31,7 +31,7 @@ Experiment 3 is in progress. Experiment 1 received an Ads Manager orientation an
 
 ## Repository state
 
-The local `meta-camp` repository is on `main` at commit `64f8c0b` and tracks `origin/main`. Its `origin` remote is the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`. The agent has not independently fetched live remote contents. Never stage `.env`.
+The local `meta-camp` repository is on `main` at commit `aefb4ec` and tracks `origin/main`. Its `origin` remote is the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`. The agent has not independently fetched live remote contents. Never stage `.env`.
 
 ### m3.f4.list_campaigns
 
@@ -62,10 +62,20 @@ The local `meta-camp` repository is on `main` at commit `64f8c0b` and tracks `or
 
 ### m3.f7.read_account_insights
 
-- **Status:** Verified by code review and student-reported Explorer and Python output; **Commit:** Pending.
+- **Status:** Verified by code review and student-reported Explorer and Python output; **Commit:** `aefb4ec` (recorded with the next feature, per the agreed log convention).
 - **File:** `src/inspect_insights.py`.
 - **What and why:** Added a read-only account-level Insights request for September 1-26, 2026 to establish a fixed reporting window for later analytics work.
 - **Code meaning:** The script reads the token and account ID from the local environment, requests `date_start,date_stop,spend,impressions,clicks,reach` with `level=account`, the fixed `time_range`, and a limit of 25. It prints the selected range, first-page row count, paging indicator, and returned rows. It does not write ad objects or follow additional pages.
 - **Verification:** The student reported `{"data": []}` for the same request in Graph API Explorer, then ran the Python script and reported `Insights range: 2026-09-01 to 2026-09-26`, `Insights rows on first page: 0`, `More pages: no`, and `[]`. The agent reviewed the code but did not run a live API request or inspect `.env`.
 - **Limitations:** The empty response contains no metric values; it must not be interpreted as a row of zero-valued metrics. Normalization of nonempty results and comparison across reporting levels remain unverified.
 - **Recheck:** Run `src/inspect_insights.py` with the local `.env` loaded in PyCharm, and compare the date range and row count with the same Explorer GET. Do not share tokens or account details.
+
+### m3.f8.synthetic_response_fixtures
+
+- **Status:** Fixture files created and locally validated; parsing with application code remains a later task; **Commit:** Pending.
+- **Files:** `tests/fixtures/README.md` and 16 JSON fixtures covering an account, two campaign pages, ad sets, ads, aggregate account/campaign/ad-set/ad Insights, seven daily account rows, 21 daily campaign rows, explicit-zero and empty cases, and illustrative expired-token, permission, and rate-limit error bodies.
+- **What and why:** The live account returned no campaign, ad-set, ad, or Insights rows. These deliberately invented responses provide nonempty hierarchy and metrics for offline parser, pagination, and error-handling exercises without implying live ad delivery or spend.
+- **Data meaning:** Four synthetic campaigns, five ad sets, and five ads support traffic-campaign comparison, a different awareness objective, and a no-delivery hierarchy. Three campaigns have invented delivery between September 20-26, 2026 within the September 1-26 aggregate window. Account, campaign, ad-set, ad, and daily spend, impressions, and clicks reconcile to 100.00, 14000, and 400. Reach is deliberately non-additive; one campaign/day row omits reach to distinguish missing from zero. The top-level `_fixture` marker is local metadata, not a Meta API field. Paging URLs and error details are illustrative and contain no token.
+- **Verification:** All 16 JSON files parsed with PowerShell `ConvertFrom-Json` and contained `_fixture.synthetic = true`. Local checks confirmed hierarchy parent links, row counts, aggregate and per-day additive totals, the missing-reach case, and the preserved empty fixture. The agent did not run the Python client against these files or make a live API request.
+- **Limitations:** Synthetic error codes and HTTP status metadata are test inputs, not a guarantee of Meta's exact responses. A network failure has no JSON body and will need a simulated transport exception. Fixtures alone do not verify pagination or normalization code.
+- **Recheck:** Inspect `tests/fixtures/README.md`, parse each JSON file locally, and verify IDs and metric totals before using the samples in parser tests. Never send fixture URLs to Meta.

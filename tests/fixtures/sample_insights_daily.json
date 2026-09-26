@@ -1,0 +1,66 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "daily account-level Insights for 2026-09-20 through 2026-09-26",
+    "level": "account",
+    "time_increment": 1
+  },
+  "data": [
+    {
+      "date_start": "2026-09-20",
+      "date_stop": "2026-09-20",
+      "spend": "8.00",
+      "impressions": "1050",
+      "clicks": "31",
+      "reach": "800"
+    },
+    {
+      "date_start": "2026-09-21",
+      "date_stop": "2026-09-21",
+      "spend": "12.00",
+      "impressions": "1750",
+      "clicks": "49",
+      "reach": "1300"
+    },
+    {
+      "date_start": "2026-09-22",
+      "date_stop": "2026-09-22",
+      "spend": "14.00",
+      "impressions": "2000",
+      "clicks": "60",
+      "reach": "1500"
+    },
+    {
+      "date_start": "2026-09-23",
+      "date_stop": "2026-09-23",
+      "spend": "16.00",
+      "impressions": "2100",
+      "clicks": "62",
+      "reach": "1600"
+    },
+    {
+      "date_start": "2026-09-24",
+      "date_stop": "2026-09-24",
+      "spend": "16.00",
+      "impressions": "2100",
+      "clicks": "62",
+      "reach": "1600"
+    },
+    {
+      "date_start": "2026-09-25",
+      "date_stop": "2026-09-25",
+      "spend": "17.00",
+      "impressions": "2500",
+      "clicks": "68",
+      "reach": "1850"
+    },
+    {
+      "date_start": "2026-09-26",
+      "date_stop": "2026-09-26",
+      "spend": "17.00",
+      "impressions": "2500",
+      "clicks": "68",
+      "reach": "1850"
+    }
+  ]
+}

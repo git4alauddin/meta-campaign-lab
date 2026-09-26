@@ -1,0 +1,12 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "expired access token",
+    "http_status": 400
+  },
+  "error": {
+    "message": "SYNTHETIC: access token expired",
+    "type": "OAuthException",
+    "code": 190
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "explicit zero-valued campaign row for separate testing",
+    "level": "campaign"
+  },
+  "data": [
+    {
+      "campaign_id": "200000000000004",
+      "campaign_name": "SYNTHETIC Traffic - No Delivery",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "0.00",
+      "impressions": "0",
+      "clicks": "0",
+      "reach": "0"
+    }
+  ]
+}

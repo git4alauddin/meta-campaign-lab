@@ -1,0 +1,43 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "five ad sets linked to sample campaigns"
+  },
+  "data": [
+    {
+      "id": "300000000000001",
+      "name": "SYNTHETIC Healthy - Broad Ad Set",
+      "campaign_id": "200000000000001",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "300000000000002",
+      "name": "SYNTHETIC Healthy - Interest Ad Set",
+      "campaign_id": "200000000000001",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "300000000000003",
+      "name": "SYNTHETIC High Cost Ad Set",
+      "campaign_id": "200000000000002",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "300000000000004",
+      "name": "SYNTHETIC Awareness Ad Set",
+      "campaign_id": "200000000000003",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "300000000000005",
+      "name": "SYNTHETIC No Delivery Ad Set",
+      "campaign_id": "200000000000004",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    }
+  ]
+}

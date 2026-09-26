@@ -1,0 +1,8 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "successful Insights request with no rows",
+    "level": "account"
+  },
+  "data": []
+}

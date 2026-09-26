@@ -1,0 +1,12 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "request rate limit",
+    "http_status": 429
+  },
+  "error": {
+    "message": "SYNTHETIC: request limit reached",
+    "type": "OAuthException",
+    "code": 4
+  }
+}

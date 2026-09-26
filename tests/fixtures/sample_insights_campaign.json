@@ -1,0 +1,39 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "campaign-level Insights for 2026-09-01 through 2026-09-26",
+    "level": "campaign"
+  },
+  "data": [
+    {
+      "campaign_id": "200000000000001",
+      "campaign_name": "SYNTHETIC Traffic - Healthy",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "25.00",
+      "impressions": "5000",
+      "clicks": "250",
+      "reach": "3300"
+    },
+    {
+      "campaign_id": "200000000000002",
+      "campaign_name": "SYNTHETIC Traffic - High Cost",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "60.00",
+      "impressions": "3000",
+      "clicks": "60",
+      "reach": "2300"
+    },
+    {
+      "campaign_id": "200000000000003",
+      "campaign_name": "SYNTHETIC Awareness",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "15.00",
+      "impressions": "6000",
+      "clicks": "90",
+      "reach": "4300"
+    }
+  ]
+}

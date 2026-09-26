@@ -1,0 +1,198 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "daily campaign-level Insights for 2026-09-20 through 2026-09-26",
+    "level": "campaign",
+    "time_increment": 1
+  },
+  "data": [
+    {
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-20",
+      "date_stop": "2026-09-20",
+      "spend": "2.00",
+      "impressions": "400",
+      "clicks": "20",
+      "reach": "320"
+    },
+    {
+      "campaign_id": "200000000000002",
+      "date_start": "2026-09-20",
+      "date_stop": "2026-09-20",
+      "spend": "5.00",
+      "impressions": "250",
+      "clicks": "5",
+      "reach": "210"
+    },
+    {
+      "campaign_id": "200000000000003",
+      "date_start": "2026-09-20",
+      "date_stop": "2026-09-20",
+      "spend": "1.00",
+      "impressions": "400",
+      "clicks": "6",
+      "reach": "300"
+    },
+    {
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-21",
+      "date_stop": "2026-09-21",
+      "spend": "3.00",
+      "impressions": "600",
+      "clicks": "30",
+      "reach": "480"
+    },
+    {
+      "campaign_id": "200000000000002",
+      "date_start": "2026-09-21",
+      "date_stop": "2026-09-21",
+      "spend": "7.00",
+      "impressions": "350",
+      "clicks": "7",
+      "reach": "290"
+    },
+    {
+      "campaign_id": "200000000000003",
+      "date_start": "2026-09-21",
+      "date_stop": "2026-09-21",
+      "spend": "2.00",
+      "impressions": "800",
+      "clicks": "12",
+      "reach": "600"
+    },
+    {
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-22",
+      "date_stop": "2026-09-22",
+      "spend": "4.00",
+      "impressions": "800",
+      "clicks": "40",
+      "reach": "630"
+    },
+    {
+      "campaign_id": "200000000000002",
+      "date_start": "2026-09-22",
+      "date_stop": "2026-09-22",
+      "spend": "8.00",
+      "impressions": "400",
+      "clicks": "8",
+      "reach": "330"
+    },
+    {
+      "campaign_id": "200000000000003",
+      "date_start": "2026-09-22",
+      "date_stop": "2026-09-22",
+      "spend": "2.00",
+      "impressions": "800",
+      "clicks": "12",
+      "reach": "600"
+    },
+    {
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-23",
+      "date_stop": "2026-09-23",
+      "spend": "4.00",
+      "impressions": "800",
+      "clicks": "40",
+      "reach": "630"
+    },
+    {
+      "campaign_id": "200000000000002",
+      "date_start": "2026-09-23",
+      "date_stop": "2026-09-23",
+      "spend": "10.00",
+      "impressions": "500",
+      "clicks": "10"
+    },
+    {
+      "campaign_id": "200000000000003",
+      "date_start": "2026-09-23",
+      "date_stop": "2026-09-23",
+      "spend": "2.00",
+      "impressions": "800",
+      "clicks": "12",
+      "reach": "600"
+    },
+    {
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-24",
+      "date_stop": "2026-09-24",
+      "spend": "4.00",
+      "impressions": "800",
+      "clicks": "40",
+      "reach": "630"
+    },
+    {
+      "campaign_id": "200000000000002",
+      "date_start": "2026-09-24",
+      "date_stop": "2026-09-24",
+      "spend": "10.00",
+      "impressions": "500",
+      "clicks": "10",
+      "reach": "410"
+    },
+    {
+      "campaign_id": "200000000000003",
+      "date_start": "2026-09-24",
+      "date_stop": "2026-09-24",
+      "spend": "2.00",
+      "impressions": "800",
+      "clicks": "12",
+      "reach": "600"
+    },
+    {
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-25",
+      "date_stop": "2026-09-25",
+      "spend": "4.00",
+      "impressions": "800",
+      "clicks": "40",
+      "reach": "630"
+    },
+    {
+      "campaign_id": "200000000000002",
+      "date_start": "2026-09-25",
+      "date_stop": "2026-09-25",
+      "spend": "10.00",
+      "impressions": "500",
+      "clicks": "10",
+      "reach": "410"
+    },
+    {
+      "campaign_id": "200000000000003",
+      "date_start": "2026-09-25",
+      "date_stop": "2026-09-25",
+      "spend": "3.00",
+      "impressions": "1200",
+      "clicks": "18",
+      "reach": "900"
+    },
+    {
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-26",
+      "date_stop": "2026-09-26",
+      "spend": "4.00",
+      "impressions": "800",
+      "clicks": "40",
+      "reach": "630"
+    },
+    {
+      "campaign_id": "200000000000002",
+      "date_start": "2026-09-26",
+      "date_stop": "2026-09-26",
+      "spend": "10.00",
+      "impressions": "500",
+      "clicks": "10",
+      "reach": "410"
+    },
+    {
+      "campaign_id": "200000000000003",
+      "date_start": "2026-09-26",
+      "date_stop": "2026-09-26",
+      "spend": "3.00",
+      "impressions": "1200",
+      "clicks": "18",
+      "reach": "900"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "ad-set-level Insights for 2026-09-01 through 2026-09-26",
+    "level": "adset"
+  },
+  "data": [
+    {
+      "adset_id": "300000000000001",
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "18.00",
+      "impressions": "3600",
+      "clicks": "180",
+      "reach": "2450"
+    },
+    {
+      "adset_id": "300000000000002",
+      "campaign_id": "200000000000001",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "7.00",
+      "impressions": "1400",
+      "clicks": "70",
+      "reach": "1100"
+    },
+    {
+      "adset_id": "300000000000003",
+      "campaign_id": "200000000000002",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "60.00",
+      "impressions": "3000",
+      "clicks": "60",
+      "reach": "2300"
+    },
+    {
+      "adset_id": "300000000000004",
+      "campaign_id": "200000000000003",
+      "date_start": "2026-09-01",
+      "date_stop": "2026-09-26",
+      "spend": "15.00",
+      "impressions": "6000",
+      "clicks": "90",
+      "reach": "4300"
+    }
+  ]
+}

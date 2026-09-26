@@ -1,0 +1,29 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "campaign page 1 of 2"
+  },
+  "data": [
+    {
+      "id": "200000000000001",
+      "name": "SYNTHETIC Traffic - Healthy",
+      "objective": "OUTCOME_TRAFFIC",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "200000000000002",
+      "name": "SYNTHETIC Traffic - High Cost",
+      "objective": "OUTCOME_TRAFFIC",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "before": "synthetic_campaign_before_1",
+      "after": "synthetic_campaign_after_1"
+    },
+    "next": "https://graph.facebook.com/v26.0/act_000000000000001/campaigns?fields=id%2Cname%2Cobjective%2Cstatus%2Ceffective_status&limit=2&after=synthetic_campaign_after_1"
+  }
+}

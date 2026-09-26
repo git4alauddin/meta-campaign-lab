@@ -1,0 +1,28 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "campaign page 2 of 2"
+  },
+  "data": [
+    {
+      "id": "200000000000003",
+      "name": "SYNTHETIC Awareness",
+      "objective": "OUTCOME_AWARENESS",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "200000000000004",
+      "name": "SYNTHETIC Traffic - No Delivery",
+      "objective": "OUTCOME_TRAFFIC",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "before": "synthetic_campaign_before_2",
+      "after": "synthetic_campaign_after_2"
+    }
+  }
+}

@@ -20,7 +20,9 @@ The workflow governs **how** to work; the active planner governs **what** to bui
 
 The student reports that a Meta developer app and Graph API Explorer are available at `v26.0`, and that `ads_read` allowed an account-list request. `src/inspect_accounts.py` returned one account on its first page with no further page. The campaign-list request returned an empty `data` list in Explorer, and `src/inspect_campaign.py` returned zero campaigns with no next page. `src/inspect_adsets.py` returned zero ad sets with no next page, and `src/inspect_ads.py` returned zero ads with no next page. The account-level Insights request for September 1-26, 2026 returned an empty `data` list in Explorer and zero rows with no next page from `src/inspect_insights.py`. These are student-reported runs; the agent did not run live requests. No token or raw account response was shared.
 
-**Repository:** `C:\Users\alaud\OneDrive\Desktop\meta-camp` is on `main` at commit `64f8c0b` and tracks `origin/main`. `origin` is configured as the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`; live remote contents have not been fetched by the agent. `.env` is ignored and must never be inspected or staged. By agreement, a commit's hash is recorded in the implementation log with the next feature commit; no hash-only commit is made.
+**Repository:** `C:\Users\alaud\OneDrive\Desktop\meta-camp` is on `main` at commit `aefb4ec` and tracks `origin/main`. `origin` is configured as the student-provided `https://github.com/git4alauddin/meta-campaign-lab.git`; live remote contents have not been fetched by the agent. `.env` is ignored and must never be inspected or staged. By agreement, a commit's hash is recorded in the implementation log with the next feature commit; no hash-only commit is made.
+
+Synthetic Experiment 3 fixtures now exist in `tests/fixtures/` for four campaigns, five ad sets, five ads, account/campaign/ad-set/ad aggregate Insights, seven days of account and campaign trends, two-page pagination, missing/zero/empty metrics, and illustrative API errors. The agent validated JSON syntax, synthetic markers, parent IDs, and aggregate and per-day additive totals. They are not live Meta data and have not yet been consumed by a parser.
 
 ## Planned experiment sequence
 
@@ -64,4 +66,4 @@ The student reports that a Meta developer app and Graph API Explorer are availab
 
 Change only durable resume information: current experiment checkpoint, verified project/repo paths, major source-of-truth changes and stable collaboration rules. Never guess a local project path or copy the Telegram project's local path/GitHub remote into this new Meta project without confirmation.
 
-**Next agent action:** The verified account Insights script is ready for a student-run commit. After that commit, continue with a clearly labeled local Insights fixture so nonempty response parsing can be learned without claiming live delivery data. Do not create or publish an ad or initiate spending.
+**Next agent action:** Review and commit the synthetic fixtures with explicit paths. Then build a small offline parser for Insights and hierarchy data, using the fixtures before expanding live API handling. Do not create or publish an ad or initiate spending.

@@ -1,0 +1,12 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "scenario": "missing read permission",
+    "http_status": 400
+  },
+  "error": {
+    "message": "SYNTHETIC: permission is missing for this request",
+    "type": "OAuthException",
+    "code": 200
+  }
+}
